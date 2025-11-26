@@ -1,0 +1,13 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: jenkins-deployment-manager
+  namespace: app
+subjects:
+- kind: ServiceAccount
+  name: default           # ====> or namespace  jenkins in it and give sevicenameaccount to cloud pod in jenkins
+  namespace: jenkins
+roleRef:
+  kind: Role
+  name: deployment-manager
+  apiGroup: rbac.authorization.k8s.io

@@ -1,0 +1,54 @@
+
+
+
+git clone https://github.com/scriptcamp/kubernetes-jenkins
+
+kubectl create namespace jenkins
+
+1|
+
+kubectl apply -f serviceAccount.yaml
+
+------------------------------------------------------------------------------------
+2|
+      nodeSelectorTerms:
+      - matchExpressions:
+        - key: topology.kubernetes.io/zone
+          operator: In
+          values:
+          - us-east-1c   #==========> same to any pod region (avalibility zone )
+  csi:
+    driver: ebs.csi.aws.com
+    volumeHandle: vol-000753e6f36c7df6f  #===========> id for gp2 volume u create in terraform
+
+kubectl create -f volume.yaml
+
+------------------------------------------------------------------------------------
+3|
+
+kubectl apply -f deployment.yaml  change =====> image : jenkins/jenkins:lts-jdk17
+------------------------------------------------------------------------------------
+4|
+
+kubectl apply -f service.yaml
+------------------------------------------------------------------------------------
+5|
+http://<node-ip>:32000
+
+kubectl get pods --namespace=jenkins
+
+kubectl logs jenkins-pod-name  --namespace=Jenkins
+
+
+
+
+
+
+
+
+------
+
+file conf for 
+دا لازم يتعمل نعمل secrat auth ونحطه ضمن متطلبات kubernetes plugin
+
+---------

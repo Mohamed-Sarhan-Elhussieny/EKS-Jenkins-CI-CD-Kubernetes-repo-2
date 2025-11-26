@@ -1,0 +1,22 @@
+﻿apiVersion: v1
+kind: Service
+metadata:
+  name: jenkins-service
+  namespace: jenkins
+  annotations:
+    prometheus.io/scrape: 'true'
+    prometheus.io/path: /
+    prometheus.io/port: '8080'
+spec:
+  selector:
+    app: jenkins-server
+  type: LoadBalancer
+  ports:
+  - name: http
+    protocol: TCP
+    port: 8080
+    targetPort: 8080
+  - name: jnlp    #======> to make kubernetes plugin pod communicate with jenkins
+    protocol: TCP
+    port: 50000
+    targetPort: 50000

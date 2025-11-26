@@ -1,0 +1,36 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    jenkins: agent
+spec:
+  serviceAccountName: default
+  containers:
+  - name: jnlp
+    image: jenkins/inbound-agent:latest
+    args:
+    - "$(JENKINS_SECRET)"
+    - "$(JENKINS_NAME)"
+  - name: kaniko
+    image: gcr.io/kaniko-project/executor:debug
+    command:
+    - /busybox/cat
+    tty: true
+    volumeMounts:
+    - name: docker-auth
+      mountPath: /kaniko/.docker
+    env:
+    - name: DOCKER_CONFIG
+      value: /kaniko/.docker
+  - name: kubectl
+    image: alpine/k8s:1.28.3
+    command:
+    - cat
+    tty: true
+  volumes:
+  - name: docker-auth
+    secret:
+      secretName: docker-auth
+      items:
+      - key: .dockerconfigjson
+        path: config.json
