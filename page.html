@@ -78,7 +78,7 @@
             font-size: 1.1em;
         }
 
-        /* Architecture Section */
+        /* Architecture Overview */
         .section {
             margin: 80px 0;
             animation: fadeInUp 1s ease;
@@ -91,6 +91,217 @@
             background: linear-gradient(135deg, #818cf8 0%, #c084fc 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+        }
+
+        /* DevOps Diagram Styles */
+        .devops-diagram {
+            background: rgba(30, 41, 59, 0.5);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(99, 102, 241, 0.2);
+            border-radius: 20px;
+            padding: 60px 40px;
+            margin: 40px 0;
+        }
+
+        .diagram-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .diagram-row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            margin: 20px 0;
+        }
+
+        .diagram-box {
+            background: rgba(15, 23, 42, 0.8);
+            border: 2px solid rgba(99, 102, 241, 0.4);
+            border-radius: 15px;
+            padding: 25px;
+            min-width: 220px;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .diagram-box:hover {
+            transform: scale(1.05);
+            border-color: rgba(99, 102, 241, 0.8);
+            box-shadow: 0 10px 40px rgba(99, 102, 241, 0.3);
+        }
+
+        .highlight-box {
+            background: rgba(99, 102, 241, 0.1);
+            border: 3px solid rgba(99, 102, 241, 0.6);
+        }
+
+        .box-icon {
+            font-size: 3em;
+            margin-bottom: 10px;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .box-title {
+            font-size: 1.3em;
+            font-weight: 600;
+            color: #e2e8f0;
+            margin-bottom: 8px;
+        }
+
+        .box-desc {
+            color: #94a3b8;
+            font-size: 0.95em;
+            margin-bottom: 10px;
+        }
+
+        .box-steps {
+            margin-top: 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .mini-step {
+            background: rgba(99, 102, 241, 0.15);
+            padding: 6px 12px;
+            border-radius: 5px;
+            font-size: 0.85em;
+            color: #c7d2fe;
+        }
+
+        .box-tag {
+            display: inline-block;
+            background: linear-gradient(135deg, #818cf8 0%, #c084fc 100%);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+
+        .arrow-right {
+            font-size: 2.5em;
+            color: #818cf8;
+            animation: slide-right 1.5s infinite;
+        }
+
+        .arrow-down {
+            font-size: 2.5em;
+            color: #818cf8;
+            text-align: center;
+            animation: slide-down 1.5s infinite;
+        }
+
+        @keyframes slide-right {
+            0%, 100% { transform: translateX(0); opacity: 1; }
+            50% { transform: translateX(10px); opacity: 0.5; }
+        }
+
+        @keyframes slide-down {
+            0%, 100% { transform: translateY(0); opacity: 1; }
+            50% { transform: translateY(10px); opacity: 0.5; }
+        }
+
+        /* AWS Setup Steps */
+        .setup-section {
+            background: rgba(30, 41, 59, 0.5);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(99, 102, 241, 0.2);
+            border-radius: 20px;
+            padding: 50px;
+            margin: 60px 0;
+        }
+
+        .setup-phase {
+            margin: 40px 0;
+        }
+
+        .phase-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+            padding: 20px;
+            background: rgba(99, 102, 241, 0.1);
+            border-left: 5px solid #818cf8;
+            border-radius: 10px;
+        }
+
+        .phase-icon {
+            font-size: 2.5em;
+        }
+
+        .phase-title {
+            font-size: 1.8em;
+            font-weight: 600;
+            color: #e2e8f0;
+        }
+
+        .setup-steps-list {
+            display: grid;
+            gap: 20px;
+            margin-left: 40px;
+        }
+
+        .setup-step {
+            background: rgba(15, 23, 42, 0.6);
+            border: 2px solid rgba(99, 102, 241, 0.3);
+            border-radius: 12px;
+            padding: 20px 25px;
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .setup-step:hover {
+            border-color: rgba(99, 102, 241, 0.6);
+            transform: translateX(10px);
+            background: rgba(99, 102, 241, 0.08);
+        }
+
+        .step-num {
+            background: linear-gradient(135deg, #818cf8 0%, #c084fc 100%);
+            color: #fff;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.3em;
+            flex-shrink: 0;
+        }
+
+        .step-content h4 {
+            color: #e2e8f0;
+            font-size: 1.2em;
+            margin-bottom: 8px;
+        }
+
+        .step-content p {
+            color: #94a3b8;
+            line-height: 1.6;
+        }
+
+        .code-snippet {
+            background: rgba(0, 0, 0, 0.4);
+            border-left: 3px solid #818cf8;
+            padding: 12px 15px;
+            margin-top: 10px;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            color: #c7d2fe;
+            font-size: 0.9em;
         }
 
         /* Architecture Flow */
@@ -430,72 +641,7 @@
             }
         }
 
-        /* GitHub Repositories Section */
-        .repos-section {
-            background: rgba(30, 41, 59, 0.5);
-            backdrop-filter: blur(10px);
-            border: 2px solid rgba(99, 102, 241, 0.2);
-            border-radius: 20px;
-            padding: 50px;
-            margin: 60px 0;
-        }
-
-        .repo-card {
-            background: rgba(15, 23, 42, 0.8);
-            border: 2px solid rgba(99, 102, 241, 0.3);
-            border-radius: 15px;
-            padding: 30px;
-            margin: 20px 0;
-            transition: all 0.3s ease;
-        }
-
-        .repo-card:hover {
-            border-color: rgba(99, 102, 241, 0.6);
-            transform: translateX(10px);
-            box-shadow: 0 10px 30px rgba(99, 102, 241, 0.3);
-        }
-
-        .repo-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 15px;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
-
-        .repo-name {
-            font-size: 1.4em;
-            font-weight: 600;
-            color: #818cf8;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .repo-link {
-            background: linear-gradient(135deg, #818cf8 0%, #c084fc 100%);
-            color: white;
-            padding: 10px 20px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .repo-link:hover {
-            transform: scale(1.05);
-            box-shadow: 0 5px 20px rgba(129, 140, 248, 0.4);
-        }
-
-        .repo-desc {
-            color: #94a3b8;
-            line-height: 1.6;
-            margin-top: 10px;
-        }
+        /* Responsive */
         @media (max-width: 768px) {
             .hero h1 {
                 font-size: 2.5em;
@@ -516,6 +662,49 @@
             .architecture-flow {
                 grid-template-columns: 1fr;
             }
+
+            .diagram-row {
+                flex-direction: column;
+            }
+
+            .arrow-right {
+                display: none;
+            }
+
+            .setup-steps-list {
+                margin-left: 0;
+            }
+        }
+
+        /* Additional hover effects */
+        .developer-box:hover {
+            background: rgba(34, 197, 94, 0.1);
+            border-color: rgba(34, 197, 94, 0.6);
+        }
+
+        .github-box:hover {
+            background: rgba(139, 92, 246, 0.1);
+            border-color: rgba(139, 92, 246, 0.6);
+        }
+
+        .jenkins-box:hover {
+            background: rgba(239, 68, 68, 0.1);
+            border-color: rgba(239, 68, 68, 0.6);
+        }
+
+        .docker-box:hover {
+            background: rgba(59, 130, 246, 0.1);
+            border-color: rgba(59, 130, 246, 0.6);
+        }
+
+        .eks-box:hover {
+            background: rgba(245, 158, 11, 0.1);
+            border-color: rgba(245, 158, 11, 0.6);
+        }
+
+        .app-box:hover {
+            background: rgba(16, 185, 129, 0.1);
+            border-color: rgba(16, 185, 129, 0.6);
         }
     </style>
 </head>
@@ -528,18 +717,10 @@
                     PROJECT BY
                 </div>
                 <div style="font-size: 2.2em; font-weight: 700; color: #f1f5f9; margin-bottom: 8px;">
-                    Eng. Mohamed Sarhan Al-Husseini
+                    Eng. Mohamed Sarhan El-Husseini
                 </div>
-                <div style="font-size: 1.3em; color: #94a3b8; font-weight: 500; margin-bottom: 20px;">
+                <div style="font-size: 1.3em; color: #94a3b8; font-weight: 500;">
                     ☁️ Cloud & DevOps Engineer
-                </div>
-                <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
-                    <a href="https://www.linkedin.com/in/mohamed-sarhan7/" target="_blank" style="text-decoration: none; background: rgba(10, 102, 194, 0.2); border: 2px solid rgba(10, 102, 194, 0.4); padding: 10px 20px; border-radius: 8px; color: #60a5fa; font-weight: 600; transition: all 0.3s ease; display: inline-flex; align-items: center; gap: 8px;">
-                        <span style="font-size: 1.2em;">💼</span> LinkedIn Profile
-                    </a>
-                    <a href="https://github.com/mohamed-sarhan7" target="_blank" style="text-decoration: none; background: rgba(139, 92, 246, 0.2); border: 2px solid rgba(139, 92, 246, 0.4); padding: 10px 20px; border-radius: 8px; color: #a78bfa; font-weight: 600; transition: all 0.3s ease; display: inline-flex; align-items: center; gap: 8px;">
-                        <span style="font-size: 1.2em;">🐙</span> GitHub Profile
-                    </a>
                 </div>
             </div>
             <div style="width: 100px; height: 3px; background: linear-gradient(90deg, #818cf8 0%, #c084fc 100%); margin: 40px auto; border-radius: 10px;"></div>
@@ -550,27 +731,107 @@
                 <span class="badge">☸️ Kubernetes</span>
                 <span class="badge">🔄 CI/CD</span>
                 <span class="badge">🐳 Docker</span>
+                <span class="badge">🔨 Jenkins</span>
+                <span class="badge">📦 Terraform</span>
             </div>
         </div>
 
+        <!-- DevOps Workflow Diagram -->
+        <section class="section">
+            <h2 class="section-title">🔄 Complete DevOps Workflow Diagram</h2>
+            <div class="devops-diagram">
+                <div class="diagram-container">
+                    <!-- Row 1: Developer & GitHub -->
+                    <div class="diagram-row">
+                        <div class="diagram-box developer-box">
+                            <div class="box-icon">👨‍💻</div>
+                            <div class="box-title">Developer</div>
+                            <div class="box-desc">Write & Push Code</div>
+                        </div>
+                        <div class="arrow-right">→</div>
+                        <div class="diagram-box github-box">
+                            <div class="box-icon">🐙</div>
+                            <div class="box-title">GitHub</div>
+                            <div class="box-desc">Version Control</div>
+                        </div>
+                    </div>
+
+                    <div class="arrow-down">↓</div>
+
+                    <!-- Row 2: Jenkins CI -->
+                    <div class="diagram-row">
+                        <div class="diagram-box jenkins-box highlight-box">
+                            <div class="box-icon">🔨</div>
+                            <div class="box-title">Jenkins (Node 1)</div>
+                            <div class="box-desc">Webhook Triggered</div>
+                            <div class="box-steps">
+                                <div class="mini-step">✓ Clone Code</div>
+                                <div class="mini-step">✓ Build Image</div>
+                                <div class="mini-step">✓ Run Tests</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="arrow-down">↓</div>
+
+                    <!-- Row 3: Docker Hub -->
+                    <div class="diagram-row">
+                        <div class="diagram-box docker-box">
+                            <div class="box-icon">🐳</div>
+                            <div class="box-title">DockerHub</div>
+                            <div class="box-desc">Image Registry</div>
+                            <div class="box-tag">image:latest</div>
+                        </div>
+                    </div>
+
+                    <div class="arrow-down">↓</div>
+
+                    <!-- Row 4: EKS Deployment -->
+                    <div class="diagram-row">
+                        <div class="diagram-box eks-box highlight-box">
+                            <div class="box-icon">☸️</div>
+                            <div class="box-title">EKS Cluster (Node 2)</div>
+                            <div class="box-desc">Continuous Deployment</div>
+                            <div class="box-steps">
+                                <div class="mini-step">✓ Pull Image</div>
+                                <div class="mini-step">✓ Deploy Pod</div>
+                                <div class="mini-step">✓ Update Service</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="arrow-down">↓</div>
+
+                    <!-- Row 5: Live Application -->
+                    <div class="diagram-row">
+                        <div class="diagram-box app-box">
+                            <div class="box-icon">🌐</div>
+                            <div class="box-title">Live Application</div>
+                            <div class="box-desc">Production Ready</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Architecture Overview -->
         <section class="section">
-            <h2 class="section-title">Project Architecture</h2>
+            <h2 class="section-title">📐 Project Architecture</h2>
             <div class="architecture-flow">
                 <div class="flow-card">
                     <div class="flow-icon">☁️</div>
                     <h3 class="flow-title">AWS Infrastructure</h3>
-                    <p class="flow-description">Custom VPC with secure networking, properly configured Security Groups, and scalable infrastructure setup</p>
+                    <p class="flow-description">Custom VPC with secure networking, properly configured Security Groups, and scalable infrastructure setup using Terraform IaC</p>
                 </div>
                 <div class="flow-card">
                     <div class="flow-icon">☸️</div>
                     <h3 class="flow-title">EKS Cluster</h3>
-                    <p class="flow-description">Managed Kubernetes cluster with 2 worker nodes for high availability and load distribution</p>
+                    <p class="flow-description">Managed Kubernetes cluster with 2 worker nodes for high availability and load distribution with EBS CSI driver</p>
                 </div>
                 <div class="flow-card">
                     <div class="flow-icon">🔄</div>
                     <h3 class="flow-title">Automated Pipeline</h3>
-                    <p class="flow-description">Jenkins-powered CI/CD pipeline triggering on every GitHub commit for seamless deployments</p>
+                    <p class="flow-description">Jenkins-powered CI/CD pipeline triggering on every GitHub commit for seamless deployments with zero downtime</p>
                 </div>
             </div>
         </section>
@@ -689,38 +950,6 @@
                 </div>
             </div>
         </section>
-
-        <!-- GitHub Repositories -->
-        <div class="repos-section">
-            <h3 class="section-title">📂 Project Repositories</h3>
-            <div class="repo-card">
-                <div class="repo-header">
-                    <div class="repo-name">
-                        <span>📦</span> AWS-EKS-Core-Infrastructure-with-Terraform
-                    </div>
-                    <a href="https://github.com/mohamed-sarhan7/AWS-EKS-Core-Infrastructure-with-Terraform-depi-" target="_blank" class="repo-link">
-                        <span>🔗</span> View Repository
-                    </a>
-                </div>
-                <p class="repo-desc">
-                    Complete AWS infrastructure setup using Terraform. Includes VPC configuration, security groups, EKS cluster provisioning, and network architecture for production-ready Kubernetes deployment.
-                </p>
-            </div>
-            
-            <div class="repo-card">
-                <div class="repo-header">
-                    <div class="repo-name">
-                        <span>🚀</span> EKS-Jenkins-CI-CD-Kubernetes
-                    </div>
-                    <a href="https://github.com/mohamed-sarhan7/EKS-Jenkins-CI-CD-Kubernetes-repo-2" target="_blank" class="repo-link">
-                        <span>🔗</span> View Repository
-                    </a>
-                </div>
-                <p class="repo-desc">
-                    Jenkins CI/CD pipeline configuration for automated builds and deployments. Contains Jenkinsfiles, Kubernetes manifests, Docker configurations, and deployment scripts for seamless application delivery.
-                </p>
-            </div>
-        </div>
 
         <!-- Key Features -->
         <section class="section">
