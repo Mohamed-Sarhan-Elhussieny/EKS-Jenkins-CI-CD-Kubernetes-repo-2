@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: docker-auth
+  namespace: jenkins
+type: kubernetes.io/dockerconfigjson
+data:
+  .dockerconfigjson: <base64> {"auths":{"https://index.docker.io/v1/":{"username":"dockerhub username","password":"your dockerhub token key","auth":""}}}
