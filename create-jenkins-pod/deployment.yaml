@@ -14,9 +14,6 @@ spec:
         app: jenkins-server
     spec:
       serviceAccountName: jenkins-admin
-          volumeMounts:
-            - name: jenkins-data
-              mountPath: /var/jenkins_home
       containers:
         - name: jenkins
           image: jenkins/jenkins:lts-jdk17
