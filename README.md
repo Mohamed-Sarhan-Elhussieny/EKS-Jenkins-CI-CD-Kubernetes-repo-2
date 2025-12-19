@@ -325,8 +325,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 **Mohamed Sarhan Elhussieny**
 
-Part of Digital Egypt Pioneers Initiative (DEPI) Round 3 - DevOps Engineering Track
-
 ⭐ **Star this repo** if you find it helpful!
 
 ---
