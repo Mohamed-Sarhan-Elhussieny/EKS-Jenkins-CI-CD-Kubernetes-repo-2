@@ -20,7 +20,11 @@
 ## 📖 Overview
 
 This repository contains **declarative Kubernetes manifests** for deploying a complete CI/CD pipeline using Jenkins on AWS EKS. The setup automatically builds, pushes, and deploys containerized applications across isolated namespaces with full monitoring capabilities.
+<div align="center">
 
+![Project Diagram](Project%20daigram.png)
+
+</div>
 ### 🎯 What's Included
 
 ```
